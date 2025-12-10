@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef } from 'react';
 import { Upload, Image as ImageIcon, Sparkles, X, Download, RefreshCw, Wand2 } from 'lucide-react';
 import { ColorTheme, ThumbnailGenerationState } from '../types';
 import { generateThumbnail } from '../services/geminiService';

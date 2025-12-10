@@ -66,7 +66,14 @@ export const generateThumbnail = async (
     }
 
     const content = candidates[0].content;
+    if (!content) {
+      throw new Error("No content found in the first candidate from Gemini.");
+    }
+
     const parts = content.parts;
+    if (!parts || parts.length === 0) {
+      throw new Error("No parts found in the content from Gemini.");
+    }
 
     for (const part of parts) {
       if (part.inlineData && part.inlineData.data) {
